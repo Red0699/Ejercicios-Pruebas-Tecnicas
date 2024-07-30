@@ -16,3 +16,24 @@ calcularAreaPoligono({ tipo: 'triangulo', base: 6, altura: 9 });
 Devuelve: 27
  
 */
+
+function calcularAreaPoligono(poligono){
+    
+    let resultado = 0;
+    if(poligono.tipo == "cuadrado" && poligono.lado){
+
+        resultado = poligono.lado * poligono.lado;
+
+    }else if(poligono.tipo == "rectangulo" && poligono.base && poligono.altura){
+        resultado = poligono.base * poligono.altura;
+    }else if(poligono.tipo == "triangulo" && poligono.base && poligono.altura){
+        resultado = (poligono.base * poligono.altura) / 2;
+    }
+
+    console.log(`Area del ${poligono.tipo} es: ${resultado}`);
+    return resultado
+}
+
+calcularAreaPoligono({ tipo: 'triangulo', base: 6, altura: 9 }); 
+calcularAreaPoligono({ tipo: 'cuadrado', lado: 5 }); 
+calcularAreaPoligono({ tipo: 'rectangulo', base: 8, altura: 10 }); 
